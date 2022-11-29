@@ -8,6 +8,7 @@ package userInterface;
 
 import business.PersonDirectory;
 import java.awt.CardLayout;
+import java.awt.Color;
 import userInterface.Person.CreatePersonJPanel;
 import userInterface.PatientVitalSign.ManagePatientJPanel;
 import userInterface.PatientVitalSign.ManagePatientVitalSignJPanel;
@@ -25,6 +26,7 @@ public class MainJFrame extends javax.swing.JFrame {
     public MainJFrame() {
         initComponents();
         personDirectory= new PersonDirectory();
+
     }
 
     /** This method is called from within the constructor to
@@ -41,7 +43,10 @@ public class MainJFrame extends javax.swing.JFrame {
         btnMngPerson = new javax.swing.JButton();
         btnMngPatient = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         userContainer = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,6 +66,15 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jButton1.setText("Doctor");
 
+        jButton2.setText("Community");
+
+        userContainer.setLayout(new java.awt.CardLayout());
+        userContainer.add(jLabel1, "card2");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Krishi\\Desktop\\Data\\image1.jpg")); // NOI18N
+        jLabel2.setText("jLabel2");
+        userContainer.add(jLabel2, "card3");
+
         javax.swing.GroupLayout leftPaneLayout = new javax.swing.GroupLayout(leftPane);
         leftPane.setLayout(leftPaneLayout);
         leftPaneLayout.setHorizontalGroup(
@@ -68,26 +82,32 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(leftPaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(leftPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMngPerson, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                    .addComponent(btnMngPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnMngPatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(userContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 938, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
         leftPaneLayout.setVerticalGroup(
             leftPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leftPaneLayout.createSequentialGroup()
                 .addGap(102, 102, 102)
                 .addComponent(btnMngPerson)
-                .addGap(35, 35, 35)
+                .addGap(37, 37, 37)
                 .addComponent(btnMngPatient)
-                .addGap(35, 35, 35)
+                .addGap(40, 40, 40)
                 .addComponent(jButton1)
-                .addContainerGap(402, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, leftPaneLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(userContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jSplitPane2.setLeftComponent(leftPane);
-
-        userContainer.setLayout(new java.awt.CardLayout());
-        jSplitPane2.setRightComponent(userContainer);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,7 +115,7 @@ public class MainJFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSplitPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 916, Short.MAX_VALUE))
+                .addComponent(jSplitPane2))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,6 +189,9 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnMngPatient;
     private javax.swing.JButton btnMngPerson;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JPanel leftPane;
     private javax.swing.JPanel userContainer;
